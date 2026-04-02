@@ -1,8 +1,8 @@
 <!-- Imagen Principal -->
-<img src="imagenes/principal.jpg" alt="Imagen Principal" class="img-principal">
+<img src="IMAGES/principal.jpg" alt="Imagen Principal" class="img-principal">
 
 <!-- Logos -->
 <div class="logos">
-    <img src="imagenes/logo1.png" alt="Logo 1" class="logo">
-    <img src="imagenes/logo2.png" alt="Logo 2" class="logo">
+    <img src="IMAGES/logo1.png" alt="Logo 1" class="logo">
+    <img src="IMAGES/logo2.png" alt="Logo 2" class="logo">
 </div>
