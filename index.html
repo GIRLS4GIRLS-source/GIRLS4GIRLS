@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Girls 4 Girls</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  
+
   <style>
     body {
       margin: 0;
@@ -13,70 +13,76 @@
       color: #333;
     }
 
-    /* Banner principal */
+    /* HEADER */
     header {
+      position: relative;
       background: url('IMAGES/principal.jpg') no-repeat center center/cover;
-      color: white;
       text-align: center;
       padding: 150px 20px 100px;
+      color: white;
+    }
+
+    header .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5); /* semitransparente negra */
+      z-index: 1;
+    }
+
+    header h1,
+    header p,
+    header .btn {
       position: relative;
+      z-index: 2;
     }
 
     header h1 {
       font-size: 3em;
       margin: 0;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
     }
 
     header p {
       font-size: 1.2em;
       opacity: 0.9;
-      text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+      margin: 10px 0 30px;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 20px;
       padding: 12px 25px;
-      background: white;
-      color: #f43f5e;
+      background: #f43f5e;
+      color: white;
       border-radius: 30px;
       text-decoration: none;
       font-weight: 500;
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: 0.3s;
     }
 
     .btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+      background: #ec4899;
     }
 
-    /* Logos modernos */
+    /* LOGOS */
     .logos {
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
       margin: 40px 0;
     }
 
-    .logo-container {
-      display: inline-block;
-      background: #fff;
-      padding: 20px;
-      margin: 10px;
-      border-radius: 20px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
+    .logos img {
+      height: 80px;
+      transition: transform 0.3s;
     }
 
-    .logo-container:hover {
-      transform: scale(1.2);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    .logos img:hover {
+      transform: scale(1.1);
     }
 
-    .logo-container img {
-      width: 100px;
-      height: auto;
-    }
-
+    /* SECTIONS */
     section {
       padding: 60px 20px;
       max-width: 1000px;
@@ -100,18 +106,12 @@
       padding: 25px;
       border-radius: 15px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      transition: 0.3s;
-      opacity: 0;
-      transform: translateY(30px);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .card:hover {
       transform: translateY(-5px);
-    }
-
-    .card.visible {
-      opacity: 1;
-      transform: translateY(0);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
 
     footer {
@@ -126,20 +126,16 @@
 <body>
 
 <header>
+  <div class="overlay"></div>
   <h1>Girls 4 Girls</h1>
   <p>A global support network for women traveling safely</p>
   <a href="#" class="btn">Join the Community</a>
-</header>
 
-<!-- Logos -->
-<div class="logos">
-  <div class="logo-container">
+  <div class="logos">
     <img src="IMAGES/logo1.png" alt="Logo 1">
-  </div>
-  <div class="logo-container">
     <img src="IMAGES/logo2.png" alt="Logo 2">
   </div>
-</div>
+</header>
 
 <section>
   <h2>🌍 What is Girls 4 Girls?</h2>
@@ -184,22 +180,6 @@
 <footer>
   <p>Girls 4 Girls © 2026</p>
 </footer>
-
-<script>
-  const cards = document.querySelectorAll('.card');
-
-  function revealCards() {
-    cards.forEach(card => {
-      const rect = card.getBoundingClientRect();
-      if(rect.top < window.innerHeight - 50) {
-        card.classList.add('visible');
-      }
-    });
-  }
-
-  window.addEventListener('scroll', revealCards);
-  window.addEventListener('load', revealCards);
-</script>
 
 </body>
 </html>
